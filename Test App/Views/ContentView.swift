@@ -15,7 +15,6 @@ struct ContentView: View {
                         .padding()
                     Text("Hello, SwiftUI!")
                         .font(.system(size: 30))
-                        .foregroundColor(.black)
                         .padding()
                     HStack(spacing: 14) {
                         Button("1") {
@@ -45,19 +44,16 @@ struct ContentView: View {
                         if Button1 == true {
                             Text("Это приложение написано на языке Swift в Xcode.")
                                 .font(.system(size: 14))
-                                .foregroundColor(.black)
                                 .multilineTextAlignment(.center)
                         }
                         if Button2 == true {
                             Text("Это приложение использует интерфейс SwiftUI.")
                                 .font(.system(size: 14))
-                                .foregroundColor(.black)
                                 .multilineTextAlignment(.center)
                         }
                         if Button3 == true {
                             Text("Нажатием на одну из ссылок выше, вы можете перейти на сайт комнапии.")
                                 .font(.system(size: 14))
-                                .foregroundColor(.black)
                                 .multilineTextAlignment(.center)
                         }
                     }
