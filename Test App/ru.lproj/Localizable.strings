@@ -1,0 +1,4 @@
+"helloText" = "Привет, SwiftUI!";
+"writtenText" = "Это приложение написано на языке Swift в Xcode.";
+"interfaceText" = "Это приложение использует интерфейс SwiftUI.";
+"byClickingText" = "Нажатием на ссылки выше, вы можете перейти на сайт компании.";

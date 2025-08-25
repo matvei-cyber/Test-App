@@ -10,26 +10,24 @@ struct ContentView: View {
                 Spacer()
                 VStack(spacing: 14) {
                     Image(systemName: "globe")
-                        .font(.system(size: 40))
+                        .font(.system(size: 45))
                         .foregroundColor(.blue)
                         .padding()
-                    Text("Hello, SwiftUI!")
+                    Text("helloText")
                         .font(.system(size: 30))
                         .padding()
                     HStack(spacing: 14) {
                         Button("1") {
                             Button1 = true
                         }
-                        .shadow(radius: 1, x: 1, y: 2)
                         Button("2") {
                             Button2 = true
                         }
-                        .shadow(radius: 1, x: 1, y: 2)
                         Button("3") {
                             Button3 = true
                         }
-                        .shadow(radius: 1, x: 1, y: 2)
                     }
+                    .buttonStyle(.bordered)
                     .padding()
                     HStack(spacing: 14) {
                         Link("Apple", destination: URL(string: "https://apple.com")!)
@@ -42,17 +40,17 @@ struct ContentView: View {
                     .padding()
                     VStack(spacing: 14) {
                         if Button1 == true {
-                            Text("Это приложение написано на языке Swift в Xcode.")
+                            Text("writtenText")
                                 .font(.system(size: 14))
                                 .multilineTextAlignment(.center)
                         }
                         if Button2 == true {
-                            Text("Это приложение использует интерфейс SwiftUI.")
+                            Text("interfaceText")
                                 .font(.system(size: 14))
                                 .multilineTextAlignment(.center)
                         }
                         if Button3 == true {
-                            Text("Нажатием на одну из ссылок выше, вы можете перейти на сайт комнапии.")
+                            Text("byClickingText")
                                 .font(.system(size: 14))
                                 .multilineTextAlignment(.center)
                         }
