@@ -2,5 +2,8 @@
 "writtenText" = "This application is written in Swift programming language in Xcode.";
 "interfaceText" = "This application uses SwiftUI interface.";
 "byClickingText" = "By clicking on the links above, you can go to the company's website.";
-"buildNumberSecret" = "Little secret: this build number – (34bdf) is the first 5 characters of the application's SHA256 checksum.";
-"versionText" = "Version 0.2.1 (34bdf)";
+"buildNumberSecret" = "Little secret: this build number – (358c1) is the first 5 characters of the application's SHA256 checksum.";
+"repoLink" = "App repository";
+"releasesLink" = "App rreleases";
+"newText" = "What's new";
+"versionText" = "Version 0.3 (358c1)";
