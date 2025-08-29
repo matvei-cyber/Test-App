@@ -6,47 +6,49 @@ struct ContentView: View {
     @State private var isButtonClicked2: Bool = false
     @State private var isButtonClicked3: Bool = false
     @State private var isButtonClicked4: Bool = false
-    
-    // новое состояние: показывать Release Notes
     @State private var showReleaseNotes: Bool = false
     
     var body: some View {
+        
         ZStack {
+            
             if showReleaseNotes {
-                // экран релиз-нот внутри того же окна
+                
                 ReleaseNotesView {
-                    // замыкание onClose
+                    
                     withAnimation { showReleaseNotes = false }
                 }
-                .frame(minWidth: 600, minHeight: 900)
+                .frame(minWidth: 1200, minHeight: 825)
                 .transition(.move(edge: .trailing))
             } else {
-                // старый интерфейс
+                
                 mainContent
-                    .frame(minWidth: 600, minHeight: 900)
+                    .frame(minWidth: 1200, minHeight: 825)
                     .transition(.move(edge: .leading))
             }
         }
         .animation(.default, value: showReleaseNotes)
-        // передаём замыкание в InfoView, чтобы кнопка "что нового" открывала релиз-ноты
         .overlay(
-            InfoView {
-                withAnimation { showReleaseNotes = true }
-            }
-            .padding(.bottom, 12),
+            InfoView(showReleaseNotes: $showReleaseNotes)
+                .padding(.bottom, 12),
             alignment: .bottom
         )
+        .animation(.default, value: showReleaseNotes)
     }
     
-    // вынес основной интерфейс в отдельное свойство для читаемости
     private var mainContent: some View {
+        
         VStack {
+            
             Spacer()
+            
             VStack(spacing: 16) {
+                
                 Image("Logo")
                     .padding()
                 
                 HStack(spacing: 16) {
+                    
                     Image(systemName: "lessthan")
                         .font(.system(size: 50))
                         .foregroundColor(.blue)
@@ -64,6 +66,7 @@ struct ContentView: View {
                     .padding()
                 
                 HStack(spacing: 16) {
+                    
                     Button("1") { isButtonClicked1 = true }
                     Button("2") { isButtonClicked2 = true }
                     Button("3") { isButtonClicked3 = true }
@@ -74,6 +77,7 @@ struct ContentView: View {
                 .padding()
                 
                 HStack(spacing: 16) {
+                    
                     Link("Apple", destination: URL(string: "https://apple.com")!)
                     Link("Apple Developer", destination: URL(string: "https://developer.apple.com")!)
                     Link("SwiftUI", destination: URL(string: "https://developer.apple.com/swiftui")!)
@@ -86,7 +90,9 @@ struct ContentView: View {
                 .padding()
                 
                 HStack {
+                    
                     HStack {
+                        
                         Image(systemName: "tray.full.fill")
                             .font(.system(size: 20))
                         
@@ -96,6 +102,7 @@ struct ContentView: View {
                     .padding()
                     
                     HStack {
+                        
                         Image(systemName: "network")
                             .font(.system(size: 22))
                         
@@ -107,18 +114,22 @@ struct ContentView: View {
                 .frame(maxWidth: .infinity)
                 
                 VStack(spacing: 16) {
+                    
                     if isButtonClicked1 {
                         Text("writtenText")
                             .font(.system(size: 14))
                     }
+                    
                     if isButtonClicked2 {
                         Text("interfaceText")
                             .font(.system(size: 14))
                     }
+                    
                     if isButtonClicked3 {
                         Text("byClickingText")
                             .font(.system(size: 14))
                     }
+                    
                     if isButtonClicked4 {
                         Text("buildNumberSecret")
                             .font(.system(size: 14))
@@ -126,7 +137,8 @@ struct ContentView: View {
                 }
                 .frame(maxWidth: .infinity)
                 .multilineTextAlignment(.center)
-                .padding()
+                .padding(.horizontal)
+                .padding(.bottom)
             }
             Spacer()
         }
