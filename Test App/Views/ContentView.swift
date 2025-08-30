@@ -12,28 +12,36 @@ struct ContentView: View {
         
         ZStack {
             
+            mainContent
+                .frame(minWidth: 1200, minHeight: 825)
+                .opacity(showReleaseNotes ? 0 : 1)
+                .allowsHitTesting(!showReleaseNotes)
+            
             if showReleaseNotes {
                 
                 ReleaseNotesView {
                     
-                    withAnimation { showReleaseNotes = false }
+                    withAnimation(.easeOut(duration: 0.2)) {
+                        
+                        showReleaseNotes = false
+                        
+                    }
+                    
                 }
                 .frame(minWidth: 1200, minHeight: 825)
-                .transition(.move(edge: .trailing))
-            } else {
+                .transition(.opacity)
                 
-                mainContent
-                    .frame(minWidth: 1200, minHeight: 825)
-                    .transition(.move(edge: .leading))
             }
+            
         }
-        .animation(.default, value: showReleaseNotes)
         .overlay(
             InfoView(showReleaseNotes: $showReleaseNotes)
                 .padding(.bottom, 12),
+            
             alignment: .bottom
+            
         )
-        .animation(.default, value: showReleaseNotes)
+        
     }
     
     private var mainContent: some View {
@@ -56,6 +64,7 @@ struct ContentView: View {
                     Image(systemName: "greaterthan")
                         .font(.system(size: 50))
                         .foregroundColor(.blue)
+                    
                 }
                 .frame(maxWidth: .infinity)
                 .padding()
@@ -71,6 +80,7 @@ struct ContentView: View {
                     Button("2") { isButtonClicked2 = true }
                     Button("3") { isButtonClicked3 = true }
                     Button("4") { isButtonClicked4 = true }
+                    
                 }
                 .frame(maxWidth: .infinity)
                 .buttonStyle(.bordered)
@@ -83,6 +93,7 @@ struct ContentView: View {
                     Link("SwiftUI", destination: URL(string: "https://developer.apple.com/swiftui")!)
                     Link("Google", destination: URL(string: "https://google.com")!)
                     Link("Microsoft", destination: URL(string: "https://microsoft.com")!)
+                    
                 }
                 .font(.system(size: 14))
                 .foregroundColor(.blue)
@@ -98,8 +109,9 @@ struct ContentView: View {
                         
                         Link("repoLink", destination: URL(string: "https://github.com/matvei-cyber/Test-App")!)
                             .font(.system(size: 16))
+                        
                     }
-                    .padding()
+                    .padding(.trailing, 10)
                     
                     HStack {
                         
@@ -108,40 +120,57 @@ struct ContentView: View {
                         
                         Link("releasesLink", destination: URL(string: "https://github.com/matvei-cyber/Test-App/releases")!)
                             .font(.system(size: 16))
+                        
                     }
+                    
                 }
                 .foregroundColor(.blue)
                 .frame(maxWidth: .infinity)
+                .padding()
                 
                 VStack(spacing: 16) {
                     
                     if isButtonClicked1 {
+                        
                         Text("writtenText")
                             .font(.system(size: 14))
+                        
                     }
                     
                     if isButtonClicked2 {
+                        
                         Text("interfaceText")
                             .font(.system(size: 14))
+                        
                     }
                     
                     if isButtonClicked3 {
+                        
                         Text("byClickingText")
                             .font(.system(size: 14))
+                        
                     }
                     
                     if isButtonClicked4 {
+                        
                         Text("buildNumberSecret")
                             .font(.system(size: 14))
+                        
                     }
+                    
                 }
                 .frame(maxWidth: .infinity)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
                 .padding(.bottom)
+                
             }
+            
             Spacer()
+            
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        
     }
+    
 }
