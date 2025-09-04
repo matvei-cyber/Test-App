@@ -16,10 +16,24 @@ struct ReleaseNotesView: View {
     
     private let rawNotesRu: [(version: String, items: [String])] = [
         
+        ("1.0 Бета 1 ()", [
+            
+            "Релиз уже близко! Новая система весрий: Бета, кандидат в релиз и т. д.",
+            "Теперь при нажатии на кнопки: 1, 2, 3, 4, 5, текст появляется в полупрозрачном всплывающем окне.",
+            "Добавлена кнопка 5, отображающая информацию о приложении во всплывающем окне.",
+            "Изменен радиус скругления всех кнопок в приложении. Они стали более округлыми.",
+            "Добавлено размытие основного контента в анимации перехода на экран \"Что нового\".",
+            "Ссылка на репозиторий приложения была перенесена в строку с остальными ссылками.",
+            "Шрифты всего текста в приложении явно заданы как \"SF Pro\". Также, немного изменены размеры некоторых тесктов.",
+            "Отступы в приложении доведены до идеала.",
+            "Мелкие исправления в коде."
+            
+        ]),
+        
         ("0.5 (afa92)", [
             
             "Изменена анимация перехода на экран \"Что нового\". Она оптимизирована и меньше нагружает графику macOS.",
-            "На экран \"Что нового\" добавлена кнопка \"Открыть на GitHub\", ведущая на соостветствующий версии тег GitHub. (локализована на Русский и Английский языки).",
+            "На экран \"Что нового\" добавлена кнопка \"Открыть на GitHub\", ведущая на соответствующий версии тег GitHub. (локализована на Русский и Английский языки).",
             "Изменены отступы между ссылками на репозиторий GitHub и релизы приложения на главном экране.",
             "Исправлены мелкие ошибки и улучшена читаемость кода."
             
@@ -79,6 +93,20 @@ struct ReleaseNotesView: View {
     ]
     
     private let rawNotesEn: [(version: String, items: [String])] = [
+        
+        ("1.0 Beta 1 ()", [
+            
+            "The release is coming! New version system: Beta, release candidate, etc.",
+            "Now when you click on buttons: 1, 2, 3, 4, 5, the text appears in a translucent pop-up window.",
+            "Added a 5 button that displays information about the app in pop-up window.",
+            "The radius of rounding of all buttons in the application has been changed. They have become more rounded.",
+            "Added blurring of the main content in the transition animation to the \"What's new\" screen.",
+            "The link to the app repository has been moved to the line with the other links.",
+            "The fonts of all text in the application are explicitly set to \"SF Pro\". Also, the sizes of some texts have been slightly changed.",
+            "The indents in the application have been brought to perfection.",
+            "Minor fixes in the code."
+            
+        ]),
         
         ("0.5 (afa92)", [
             
@@ -144,6 +172,9 @@ struct ReleaseNotesView: View {
     
     private let releaseURLs: [String: String] = [
         
+        "1.0 Бета 1 ()": "https://github.com/matvei-cyber/Test-App/releases/tag/0.1Beta1",
+        "1.0 Beta 1 ()": "https://github.com/matvei-cyber/Test-App/releases/tag/0.1Beta1",
+        "0.6 ()": "https://github.com/matvei-cyber/Test-App/releases/tag/0.6",
         "0.5 (afa92)": "https://github.com/matvei-cyber/Test-App/releases/tag/0.5",
         "0.4 (5a717)": "https://github.com/matvei-cyber/Test-App/releases/tag/0.4",
         "0.3 (358c1)": "https://github.com/matvei-cyber/Test-App/releases/tag/0.3",
@@ -188,23 +219,26 @@ struct ReleaseNotesView: View {
                 Button(action: { withAnimation(.easeOut(duration: 0.16)) { onClose() } }) {
                     
                     Label("backText", systemImage: "chevron.left")
+                        .font(.custom("SF Pro", size: 14))
+                        .frame(width: 65)
                     
                 }
                 .buttonStyle(.bordered)
+                .cornerRadius(8)
                 
                 Spacer()
                 
                 Text("newText")
-                    .font(.title2)
+                    .font(.custom("SF Pro", size: 25))
                     .bold()
-                    .padding(.trailing, 65)
+                    .padding(.trailing, 85)
                 
                 Spacer()
                 
             }
             .padding(.top, 25)
             .padding(.horizontal)
-            .padding(.bottom, 15)
+            .padding(.bottom, 12)
             
             Divider()
             
@@ -219,8 +253,7 @@ struct ReleaseNotesView: View {
                             HStack {
                                 
                                 Text(note.version)
-                                
-                                    .font(.title2)
+                                    .font(.custom("SF Pro", size: 16))
                                     .bold()
                                 
                                 if let urlStr = note.urlString, let url = URL(string: urlStr) {
@@ -228,11 +261,11 @@ struct ReleaseNotesView: View {
                                     Link(destination: url) {
                                         
                                         Text("openOnGitHubText")
-                                            .font(.system(size: 14))
+                                            .font(.custom("SF Pro", size: 14))
                                             .foregroundColor(.blue)
                                         
                                         Image(systemName: "arrow.up.right.square")
-                                            .font(.system(size: 16))
+                                            .font(.custom("SF Pro", size: 16))
                                             .foregroundColor(.blue)
                                         
                                     }
@@ -247,11 +280,15 @@ struct ReleaseNotesView: View {
                                 HStack(alignment: .top, spacing: 8) {
                                     
                                     Text("•")
+                                        .font(.custom("SF Pro", size: 13))
+                                        .bold()
                                     
                                     Text(item)
+                                        .font(.custom("SF Pro", size: 13))
                                         .fixedSize(horizontal: false, vertical: true)
                                     
                                 }
+                                .padding(.top, 5)
                                 
                             }
                             

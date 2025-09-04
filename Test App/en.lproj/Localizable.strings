@@ -2,10 +2,13 @@
 "writtenText" = "This application is written in Swift programming language in Xcode.";
 "interfaceText" = "This application uses SwiftUI interface.";
 "byClickingText" = "By clicking on the links above, you can go to the company's website.";
-"buildNumberSecret" = "Little secret: this build number – (afa92) is the first 5 characters of the application's SHA256 checksum.";
+"buildNumberSecret" = "Little secret: this build number – (e5fb8) is the first 5 characters of the application's SHA256 checksum.";
+"closePop-upWindowInstruction" = "To close pop-ups that open from the buttons above, click on the background behind them.";
 "repoLink" = "App repository";
 "releasesLink" = "App releases";
+"aboutText" = "About Test App";
+"releaseDateText" = "Release date: 04.09.2025";
 "newText" = "What's new";
-"versionText" = "Version 0.5 (afa92)";
+"versionText" = "Version: 1.0 Beta 1 (e5fb8)";
 "backText" = "Back";
 "openOnGitHubText" = "Open on GitHub";

@@ -16,7 +16,7 @@ struct InfoView: View {
                     HStack {
                         
                         Image(systemName: "questionmark.bubble.fill")
-                            .font(.system(size: 18))
+                            .font(.custom("SF Pro", size: 18))
                             .foregroundColor(.blue)
                             .padding(.trailing, 2)
                         
@@ -30,13 +30,14 @@ struct InfoView: View {
                             
                         }
                         .buttonStyle(.bordered)
+                        .cornerRadius(8)
                         
                     }
                     
                     HStack {
                         
                         Text("versionText")
-                            .font(.system(size: 14))
+                            .font(.custom("SF Pro", size: 14))
                             .fixedSize(horizontal: false, vertical: true)
                         
                     }
