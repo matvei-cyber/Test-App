@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct Alert1View: View {
+struct SecretAlert7View: View {
     
     @Binding var isShown: Bool
     
@@ -22,9 +22,6 @@ struct Alert1View: View {
                 }
             
             VStack(spacing: 16) {
-                
-                Text("appWritten")
-                    .font(.custom("SF Pro", size: 14))
                 
                 Button("closeButton") {
                     

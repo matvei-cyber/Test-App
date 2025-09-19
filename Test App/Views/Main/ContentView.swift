@@ -46,11 +46,19 @@ struct ContentView: View {
                 
                 sidebarContent
                     .background(Color.mint)
+                    .foregroundColor(Color.black)
+                
+            } else if sidebarBackground == "Cyan" {
+                
+                sidebarContent
+                    .background(Color.cyan)
+                    .foregroundColor(Color.black)
                 
             } else if sidebarBackground == "Blue" {
                 
                 sidebarContent
-                    .background(Color.cyan)
+                    .background(Color.teal)
+                    .foregroundColor(Color.black)
                 
             }
             

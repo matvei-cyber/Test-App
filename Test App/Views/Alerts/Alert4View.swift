@@ -48,11 +48,12 @@ struct Alert4View: View {
             }
             .padding(50)
             .background(.ultraThinMaterial)
-            .clipShape(RoundedRectangle(cornerRadius: 20))
+            .clipShape(RoundedRectangle(cornerRadius: 40))
             .shadow(color: Color.black.opacity(0.4), radius: 20, x: 4, y: 8)
             
         }
         .padding(.top, 400)
+        .multilineTextAlignment(.center)
         
     }
     

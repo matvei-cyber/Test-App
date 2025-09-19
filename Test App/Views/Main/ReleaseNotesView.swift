@@ -13,6 +13,14 @@ struct ReleaseNotesView: View {
     
     private let rawNotesRu: [(version: String, items: [String])] = [
         
+        ("1.0 Бета 4 (d6291)", [
+            
+            "Синий цвет в настройках оформления на самом деле голубой. Добавлен новый (почти по-настоящему) синий цвет. Так как настоящий синий слишком насыщенный и не подходит.",
+            "Исправлен цвет текста в навигационном меню при выборе мятного, голубого и синего цвета в темной теме.",
+            "Добавлен отступ между ссылками на репозиторий приложения и на его релизы, чтобы не выглядело сумбурно."
+            
+        ]),
+        
         ("1.0 Бета 3 (5b6c1)", [
             
             "Добавлен символ в строку с заголовком навигационного меню.",
@@ -117,6 +125,14 @@ struct ReleaseNotesView: View {
     ]
     
     private let rawNotesEn: [(version: String, items: [String])] = [
+        
+        ("0.1 Beta 4 (d6291)", [
+            
+            "The blue color in the design settings is actually light blue. A new (almost true) blue color has been added because true blue is too saturated and doesn't suit the look.",
+            "Fixed the text color in the navigation menu when selecting mint, light blue, and blue in the dark theme.",
+            "Added a space between links to the application repository and its releases to avoid confusion."
+            
+        ]),
         
         ("1.0 Beta 3 (5b6c1)", [
             
@@ -223,6 +239,8 @@ struct ReleaseNotesView: View {
     
     private let releaseURLs: [String: String] = [
         
+        "1.0 Бета 4 (d6291)": "https://github.com/matvei-cyber/Test-App/releases/tag/1.0Beta4",
+        "1.0 Beta 4 (d6291)": "https://github.com/matvei-cyber/Test-App/releases/tag/1.0Beta4",
         "1.0 Бета 3 (5b6c1)": "https://github.com/matvei-cyber/Test-App/releases/tag/1.0Beta3",
         "1.0 Beta 3 (5b6c1)": "https://github.com/matvei-cyber/Test-App/releases/tag/1.0Beta3",
         "1.0 Бета 2 (a49b7)": "https://github.com/matvei-cyber/Test-App/releases/tag/1.0Beta2",

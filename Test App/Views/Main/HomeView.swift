@@ -2,11 +2,15 @@ import SwiftUI
 
 struct HomeView: View {
     
+    @AppStorage("isSecretSetting1Enabled") var isSecretSetting1Enabled: Bool = false
     @State private var isButtonClicked1: Bool = false
     @State private var isButtonClicked2: Bool = false
     @State private var isButtonClicked3: Bool = false
     @State private var isButtonClicked4: Bool = false
     @State private var isButtonClicked5: Bool = false
+    @State private var isButtonClicked6: Bool = false
+    @State private var button6SecretCount: Int = 0
+    @State private var isButtonClicked7: Bool = false
     
     var body: some View {
         
@@ -56,6 +60,24 @@ struct HomeView: View {
             if isButtonClicked5 {
                 
                 Alert5View(isShown: $isButtonClicked5)
+                    .frame(minWidth: 700)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .transition(.opacity)
+                
+            }
+            
+            if isButtonClicked6 {
+                
+                SecretAlert6View(isShown: $isButtonClicked6)
+                    .frame(minWidth: 700)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .transition(.opacity)
+                
+            }
+            
+            if isButtonClicked7 {
+                
+                SecretAlert7View(isShown: $isButtonClicked7)
                     .frame(minWidth: 700)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .transition(.opacity)
@@ -192,8 +214,54 @@ struct HomeView: View {
                         
                     )
                     
+                    if isSecretSetting1Enabled == true {
+                        
+                        Button("6") {
+                            
+                            withAnimation(.spring(response: 0.2, dampingFraction: 1)) {
+                                
+                                isButtonClicked6 = true
+                                
+                            }
+                            
+                            button6SecretCount += 1
+                            
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                        .overlay(
+                            
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(Color.gray, lineWidth: 0.5)
+                            
+                        )
+                        
+                    }
+                    
+                    if button6SecretCount == 10 {
+                        
+                        Button("7") {
+                            
+                            withAnimation(.spring(response: 0.2, dampingFraction: 1)) {
+                                
+                                isButtonClicked7 = true
+                                
+                            }
+                            
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                        .overlay(
+                            
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(Color.gray, lineWidth: 0.5)
+                            
+                        )
+                        
+                    }
+                    
                 }
-                .frame(minWidth: 202, minHeight: 40)
+                .frame(minWidth: 300, minHeight: 40)
                 .background(.background)
                 .cornerRadius(16)
                 .padding()
@@ -243,8 +311,10 @@ struct HomeView: View {
                             .font(.custom("SF Pro", size: 16))
                         
                     }
+                    .padding(.leading)
                     
                 }
+                .frame(maxWidth: .infinity)
                 .foregroundColor(.blue)
                 .multilineTextAlignment(.center)
                 .padding()
