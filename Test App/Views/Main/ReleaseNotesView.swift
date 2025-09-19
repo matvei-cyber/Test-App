@@ -13,6 +13,22 @@ struct ReleaseNotesView: View {
     
     private let rawNotesRu: [(version: String, items: [String])] = [
         
+        ("1.0 Бета 3 (5b6c1)", [
+            
+            "Добавлен символ в строку с заголовком навигационного меню.",
+            "Изменена подпись приложения. Но запускается все равно только с включенным SIP, потому что у меня нет акаунта разработчика App Store :(",
+            "Теперь на странице \"Настройки\" можно выбрать цвет оформления навигационного меню из 7-ми вариантов.",
+            "Добавлена скругленная подложка под кнопки 1, 2, 3, 4.",
+            "Добавлена обводка кнопкам 1, 2, 3, 4. Раньше ее не было из-за бага со скруглением углов.",
+            "Кнопка 5 удалена. Ее контент перенесен на отдельную страницу \"О приложении\".",
+            "Теперь заголовки версии, даты выпуска и описания приложения выделены жирным.",
+            "Раньше особая анимация появления всплывающих окон была привязана только к кнопке 5. Теперь ко всем.",
+            "Немного изменены отступы между корневой стопкой элементов и краем навигационного меню. Преимущественно на странице \"Что нового?\".",
+            "Исправлена ошибка: я забыл вписать ссылку на версию 1.0 Бета 2.",
+            "Много мелких изменений в коде."
+            
+        ]),
+        
         ("1.0 Бета 2 (a49b7)", [
             
             "Теперь переключение между главной страницей и экраном \"Что нового?\" реализовано через навигационное меню слева.",
@@ -101,6 +117,22 @@ struct ReleaseNotesView: View {
     ]
     
     private let rawNotesEn: [(version: String, items: [String])] = [
+        
+        ("1.0 Beta 3 (5b6c1)", [
+            
+            "Added a symbol to the navigation menu title line.",
+            "The application signature has been changed. But it still only runs with SIP enabled because I don't have an App Store developer account :(",
+            "Now on the \"Settings\" page you can choose the color of the Navigation Menu from 7 options.",
+            "Added rounded padding for buttons 1, 2, 3, 4.",
+            "Added outline to 1, 2, 3, 4 buttons. Previously it was missing due to a bug with corner rounding.",
+            "Button 5 has been removed. Its content has been moved to a separate \"About Test App\" page.",
+            "The version, release date and description headings of the application are now highlighted in bold.",
+            "Previously, the special animation for pop-up windows was tied only to button 5. Now to all.",
+            "The indents between the root stack of elements and the edge of the navigation menu have been slightly changed. Mainly on the \"What's New?\".",
+            "Fixed a mistake: I forgot to include the link to version 1.0 Beta 2.",
+            "Minor changes in the code."
+            
+        ]),
         
         ("1.0 Beta 2 (a49b7)", [
             
@@ -191,8 +223,10 @@ struct ReleaseNotesView: View {
     
     private let releaseURLs: [String: String] = [
         
-        "1.0 Бета 2 ()": "https://github.com/matvei-cyber/Test-App/releases/tag/1.0Beta2",
-        "1.0 Beta 2 ()": "https://github.com/matvei-cyber/Test-App/releases/tag/1.0Beta2",
+        "1.0 Бета 3 (5b6c1)": "https://github.com/matvei-cyber/Test-App/releases/tag/1.0Beta3",
+        "1.0 Beta 3 (5b6c1)": "https://github.com/matvei-cyber/Test-App/releases/tag/1.0Beta3",
+        "1.0 Бета 2 (a49b7)": "https://github.com/matvei-cyber/Test-App/releases/tag/1.0Beta2",
+        "1.0 Beta 2 (a49b7)": "https://github.com/matvei-cyber/Test-App/releases/tag/1.0Beta2",
         "1.0 Бета 1 (e5fb8)": "https://github.com/matvei-cyber/Test-App/releases/tag/1.0Beta1",
         "1.0 Beta 1 (e5fb8)": "https://github.com/matvei-cyber/Test-App/releases/tag/1.0Beta1",
         "0.6 ()": "https://github.com/matvei-cyber/Test-App/releases/tag/0.6",
@@ -234,7 +268,7 @@ struct ReleaseNotesView: View {
     
     var body: some View {
         
-        VStack(spacing: 12) {
+        VStack {
             
             HStack {
                 
@@ -248,10 +282,14 @@ struct ReleaseNotesView: View {
                 
             }
             .multilineTextAlignment(.center)
-            .padding(.top, 25)
-            .padding(.bottom, 12)
+            .padding(.top, 26)
+            .padding(.bottom, 17)
             
             Divider()
+            
+        }
+        
+        VStack(spacing: 12) {
             
             ScrollView {
                 
@@ -271,7 +309,7 @@ struct ReleaseNotesView: View {
                                     
                                     Link(destination: url) {
                                         
-                                        Text("openOnGitHubText")
+                                        Text("openOnGitHubLink")
                                             .font(.custom("SF Pro", size: 14))
                                             .foregroundColor(.blue)
                                         
@@ -299,7 +337,7 @@ struct ReleaseNotesView: View {
                                         .fixedSize(horizontal: false, vertical: true)
                                     
                                 }
-                                .padding(.top, 5)
+                                .padding(.top, 4)
                                 
                             }
                             
@@ -319,6 +357,7 @@ struct ReleaseNotesView: View {
         }
         .frame(minWidth: 700)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .padding(.leading)
         
     }
     

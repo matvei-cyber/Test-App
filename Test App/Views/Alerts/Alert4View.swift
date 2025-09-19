@@ -36,7 +36,13 @@ struct Alert4View: View {
                     
                 }
                 .font(.custom("SF Pro", size: 14))
-                .cornerRadius(7)
+                .clipShape(RoundedRectangle(cornerRadius: 9))
+                .overlay(
+                    
+                    RoundedRectangle(cornerRadius: 9)
+                        .stroke(Color.gray, lineWidth: 0.5)
+                    
+                )
                 .padding(.top)
                 
             }

@@ -65,8 +65,8 @@ struct HomeView: View {
         }
         .overlay(
             
-            InfoView()
-                .padding(.bottom, 12),
+            VersionView()
+                .padding(.bottom, 20),
             
             alignment: .bottom
             
@@ -87,7 +87,7 @@ struct HomeView: View {
                 
                 HStack {
                     
-                    Text("helloText")
+                    Text("helloSwiftUI")
                         .font(.custom("SF Pro", size: 32))
                     
                     Image(systemName: "swift")
@@ -99,33 +99,109 @@ struct HomeView: View {
                 }
                 .multilineTextAlignment(.center)
                 .padding()
-                
+                    
                 HStack(spacing: 15) {
                     
-                    Button("1") { isButtonClicked1 = true }.buttonStyle(.bordered).cornerRadius(6)
-                    Button("2") { isButtonClicked2 = true }.buttonStyle(.bordered).cornerRadius(6)
-                    Button("3") { isButtonClicked3 = true }.buttonStyle(.bordered).cornerRadius(6)
-                    Button("4") { isButtonClicked4 = true }.buttonStyle(.bordered).cornerRadius(6)
+                    Button("1") {
+                        
+                        withAnimation(.spring(response: 0.2, dampingFraction: 1)) {
+                            
+                            isButtonClicked1 = true
+                            
+                        }
+                        
+                    }
+                    .buttonStyle(.bordered)
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                    .overlay(
+                        
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(Color.gray, lineWidth: 0.5)
+                        
+                    )
+                    
+                    Button("2") {
+                        
+                        withAnimation(.spring(response: 0.2, dampingFraction: 1)) {
+                            
+                            isButtonClicked2 = true
+                            
+                        }
+                        
+                    }
+                    .buttonStyle(.bordered)
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                    .overlay(
+                        
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(Color.gray, lineWidth: 0.5)
+                        
+                    )
+                    
+                    Button("3") {
+                        
+                        withAnimation(.spring(response: 0.2, dampingFraction: 1)) {
+                            
+                            isButtonClicked3 = true
+                            
+                        }
+                        
+                    }
+                    .buttonStyle(.bordered)
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                    .overlay(
+                        
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(Color.gray, lineWidth: 0.5)
+                        
+                    )
+                    
+                    Button("4") {
+                        
+                        withAnimation(.spring(response: 0.2, dampingFraction: 1)) {
+                            
+                            isButtonClicked4 = true
+                            
+                        }
+                        
+                    }
+                    .buttonStyle(.bordered)
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                    .overlay(
+                        
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(Color.gray, lineWidth: 0.5)
+                        
+                    )
+                    
                     Button("5") {
                         
-                        withAnimation(.spring(response: 0.25, dampingFraction: 1.0)) {
+                        withAnimation(.spring(response: 0.2, dampingFraction: 1)) {
                             
                             isButtonClicked5 = true
                             
                         }
                         
                     }
-                    .buttonStyle(.bordered)
-                    .cornerRadius(6)
+                    .buttonStyle(.borderedProminent)
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                    .overlay(
+                        
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(Color.gray, lineWidth: 0.5)
+                        
+                    )
                     
                 }
-                .frame(maxWidth: .infinity)
+                .frame(minWidth: 202, minHeight: 40)
+                .background(.background)
+                .cornerRadius(16)
                 .padding()
                 
                 HStack {
                     
                     Text("closePop-upWindowInstruction")
-                        .font(.custom("SF Pro", size: 12))
+                        .font(.custom("SF Pro", size: 13))
                     
                 }
                 .frame(maxWidth: .infinity)
@@ -134,7 +210,6 @@ struct HomeView: View {
                 
                 HStack(spacing: 16) {
                     
-                    Link("repoLink", destination: URL(string: "https://github.com/matvei-cyber/Test-App")!)
                     Link("Apple", destination: URL(string: "https://apple.com")!)
                     Link("Apple Developer", destination: URL(string: "https://developer.apple.com")!)
                     Link("SwiftUI", destination: URL(string: "https://developer.apple.com/swiftui")!)
@@ -149,11 +224,25 @@ struct HomeView: View {
                 
                 HStack {
                     
-                    Image(systemName: "network")
-                        .font(.system(size: 22))
+                    HStack {
+                        
+                        Image(systemName: "network")
+                            .font(.custom("SF Pro", size: 22))
+                        
+                        Link("releasesLink", destination: URL(string: "https://github.com/matvei-cyber/Test-App/releases")!)
+                            .font(.custom("SF Pro", size: 16))
+                        
+                    }
                     
-                    Link("releasesLink", destination: URL(string: "https://github.com/matvei-cyber/Test-App/releases")!)
-                        .font(.custom("SF Pro", size: 16))
+                    HStack {
+                        
+                        Image(systemName: "tray.full.fill")
+                            .font(.custom("SF Pro", size: 22))
+                        
+                        Link("repoLink", destination: URL(string: "https://github.com/matvei-cyber/Test-App")!)
+                            .font(.custom("SF Pro", size: 16))
+                        
+                    }
                     
                 }
                 .foregroundColor(.blue)
@@ -165,6 +254,8 @@ struct HomeView: View {
             Spacer()
             
         }
+        .multilineTextAlignment(.center)
+        .padding(.horizontal)
         .padding(.bottom, 10)
         
     }

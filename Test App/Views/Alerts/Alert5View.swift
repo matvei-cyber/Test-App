@@ -23,23 +23,7 @@ struct Alert5View: View {
             
             VStack(spacing: 16) {
                 
-                HStack(spacing: 12) {
-                    
-                    Image(systemName: "info.bubble.fill")
-                        .font(.custom("SF Pro", size: 24))
-                        .padding(.top, 2)
-                    
-                    Text("aboutText")
-                        .font(.custom("SF Pro", size: 24))
-                        .bold()
-                    
-                }
-                .padding(.bottom)
-                
-                Text("versionText")
-                    .font(.custom("SF Pro", size: 14))
-                
-                Text("releaseDateText")
+                Text("appFinalReleaseDateSecret")
                     .font(.custom("SF Pro", size: 14))
                 
                 Button("closeButton") {
@@ -52,7 +36,13 @@ struct Alert5View: View {
                     
                 }
                 .font(.custom("SF Pro", size: 14))
-                .cornerRadius(7)
+                .clipShape(RoundedRectangle(cornerRadius: 9))
+                .overlay(
+                    
+                    RoundedRectangle(cornerRadius: 9)
+                        .stroke(Color.gray, lineWidth: 0.5)
+                    
+                )
                 .padding(.top)
                 
             }
@@ -62,7 +52,7 @@ struct Alert5View: View {
             .shadow(color: Color.black.opacity(0.4), radius: 20, x: 4, y: 8)
             
         }
-        .padding(.top, 300)
+        .padding(.top, 400)
         
     }
     
