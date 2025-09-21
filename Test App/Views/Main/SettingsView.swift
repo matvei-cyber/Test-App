@@ -13,7 +13,7 @@ struct SettingsView: View {
                 
                 Image(systemName: "gearshape.fill")
                     .font(.custom("SF Pro", size: 25))
-                    .padding(.trailing, 2)
+                    .padding(.trailing, 3)
                 
                 Text("settingsCase")
                     .font(.custom("SF Pro", size: 25))

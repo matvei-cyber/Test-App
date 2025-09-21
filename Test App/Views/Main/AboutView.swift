@@ -11,7 +11,7 @@ struct AboutView: View {
                 Image(systemName: "info.square.fill")
                     .font(.custom("SF Pro", size: 24))
                     .padding(.bottom, 1)
-                    .padding(.trailing, 2)
+                    .padding(.trailing, 3)
                 
                 Text("aboutCase")
                     .font(.custom("SF Pro", size: 24))

@@ -13,6 +13,16 @@ struct ReleaseNotesView: View {
     
     private let rawNotesRu: [(version: String, items: [String])] = [
         
+        ("1.0 Бета 5 (32e87)", [
+            
+            "Увеличена точность локализации на Английский язык.",
+            "Изменен символ ссылки на тег GitHub на странице \"Что нового?\".",
+            "Немного изменен отступ между текстом ссылки на тег GitHub и ее символом на странице \"Что нового?\".",
+            "Изменен отступ между символами в заголовках страниц: \"Что нового?\", \"Настройки\" и \"О приложении\".",
+            "Изменен размер символа ссылки на тег GitHub на странице \"Что нового?\"."
+            
+        ]),
+        
         ("1.0 Бета 4 (d6291)", [
             
             "Синий цвет в настройках оформления на самом деле голубой. Добавлен новый (почти по-настоящему) синий цвет. Так как настоящий синий слишком насыщенный и не подходит.",
@@ -126,23 +136,33 @@ struct ReleaseNotesView: View {
     
     private let rawNotesEn: [(version: String, items: [String])] = [
         
-        ("0.1 Beta 4 (d6291)", [
+        ("1.0 Beta 5 (32e87)", [
+            
+            "Improved localization accuracy for English.",
+            "Changed the GitHub tag link icon on the \"What's new?\" page.",
+            "Slightly changed the indentation between the GitHub tag link text and its symbol on the \"What's new?\" page.",
+            "Changed the spacing between characters in page headers: \"What's new?\", \"Settings\" and \"About the app\".",
+            "Changed the size of the GitHub tag link on the \"What's new?\" page."
+            
+        ]),
+        
+        ("1.0 Beta 4 (d6291)", [
             
             "The blue color in the design settings is actually light blue. A new (almost true) blue color has been added because true blue is too saturated and doesn't suit the look.",
             "Fixed the text color in the navigation menu when selecting mint, light blue, and blue in the dark theme.",
-            "Added a space between links to the application repository and its releases to avoid confusion."
+            "Added a space between links to the app repository and its releases to avoid confusion."
             
         ]),
         
         ("1.0 Beta 3 (5b6c1)", [
             
             "Added a symbol to the navigation menu title line.",
-            "The application signature has been changed. But it still only runs with SIP enabled because I don't have an App Store developer account :(",
+            "The app signature has been changed. But it still only runs with SIP enabled because I don't have an App Store developer account :(",
             "Now on the \"Settings\" page you can choose the color of the Navigation Menu from 7 options.",
             "Added rounded padding for buttons 1, 2, 3, 4.",
             "Added outline to 1, 2, 3, 4 buttons. Previously it was missing due to a bug with corner rounding.",
             "Button 5 has been removed. Its content has been moved to a separate \"About Test App\" page.",
-            "The version, release date and description headings of the application are now highlighted in bold.",
+            "The version, release date and description headings of the app are now highlighted in bold.",
             "Previously, the special animation for pop-up windows was tied only to button 5. Now to all.",
             "The indents between the root stack of elements and the edge of the navigation menu have been slightly changed. Mainly on the \"What's New?\".",
             "Fixed a mistake: I forgot to include the link to version 1.0 Beta 2.",
@@ -239,6 +259,8 @@ struct ReleaseNotesView: View {
     
     private let releaseURLs: [String: String] = [
         
+        "1.0 Бета 5 (32e87)": "https://github.com/matvei-cyber/Test-App/releases/tag/1.0Beta5",
+        "1.0 Beta 5 (32e87)": "https://github.com/matvei-cyber/Test-App/releases/tag/1.0Beta5",
         "1.0 Бета 4 (d6291)": "https://github.com/matvei-cyber/Test-App/releases/tag/1.0Beta4",
         "1.0 Beta 4 (d6291)": "https://github.com/matvei-cyber/Test-App/releases/tag/1.0Beta4",
         "1.0 Бета 3 (5b6c1)": "https://github.com/matvei-cyber/Test-App/releases/tag/1.0Beta3",
@@ -292,7 +314,7 @@ struct ReleaseNotesView: View {
                 
                 Image(systemName: "newspaper.fill")
                     .font(.custom("SF Pro", size: 25))
-                    .padding(.trailing, 2)
+                    .padding(.trailing, 3)
                 
                 Text("newCase")
                     .font(.custom("SF Pro", size: 25))
@@ -331,9 +353,10 @@ struct ReleaseNotesView: View {
                                             .font(.custom("SF Pro", size: 14))
                                             .foregroundColor(.blue)
                                         
-                                        Image(systemName: "arrow.up.right.square")
-                                            .font(.custom("SF Pro", size: 16))
+                                        Image(systemName: "link")
+                                            .font(.custom("SF Pro", size: 14))
                                             .foregroundColor(.blue)
+                                            .padding(.leading, 1)
                                         
                                     }
                                     .padding(.leading, 5)

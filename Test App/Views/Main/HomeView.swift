@@ -263,7 +263,7 @@ struct HomeView: View {
                 }
                 .frame(minWidth: 300, minHeight: 40)
                 .background(.background)
-                .cornerRadius(16)
+                .cornerRadius(17)
                 .padding()
                 
                 HStack {
