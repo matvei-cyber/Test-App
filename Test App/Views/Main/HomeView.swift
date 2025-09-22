@@ -1,3 +1,5 @@
+//RELEASE
+
 import SwiftUI
 
 struct HomeView: View {
@@ -7,17 +9,12 @@ struct HomeView: View {
     @State private var isButtonClicked2: Bool = false
     @State private var isButtonClicked3: Bool = false
     @State private var isButtonClicked4: Bool = false
-    @State private var isButtonClicked5: Bool = false
-    @State private var isButtonClicked6: Bool = false
-    @State private var button6SecretCount: Int = 0
-    @State private var isButtonClicked7: Bool = false
     
     var body: some View {
         
         ZStack {
             
             mainContent
-                .allowsHitTesting(!(isButtonClicked5))
                 .frame(minWidth: 700)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             
@@ -51,33 +48,6 @@ struct HomeView: View {
             if isButtonClicked4 {
                 
                 Alert4View(isShown: $isButtonClicked4)
-                    .frame(minWidth: 700)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .transition(.opacity)
-                
-            }
-            
-            if isButtonClicked5 {
-                
-                Alert5View(isShown: $isButtonClicked5)
-                    .frame(minWidth: 700)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .transition(.opacity)
-                
-            }
-            
-            if isButtonClicked6 {
-                
-                SecretAlert6View(isShown: $isButtonClicked6)
-                    .frame(minWidth: 700)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .transition(.opacity)
-                
-            }
-            
-            if isButtonClicked7 {
-                
-                SecretAlert7View(isShown: $isButtonClicked7)
                     .frame(minWidth: 700)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .transition(.opacity)
@@ -196,72 +166,8 @@ struct HomeView: View {
                         
                     )
                     
-                    Button("5") {
-                        
-                        withAnimation(.spring(response: 0.2, dampingFraction: 1)) {
-                            
-                            isButtonClicked5 = true
-                            
-                        }
-                        
-                    }
-                    .buttonStyle(.borderedProminent)
-                    .clipShape(RoundedRectangle(cornerRadius: 8))
-                    .overlay(
-                        
-                        RoundedRectangle(cornerRadius: 8)
-                            .stroke(Color.gray, lineWidth: 0.5)
-                        
-                    )
-                    
-                    if isSecretSetting1Enabled == true {
-                        
-                        Button("6") {
-                            
-                            withAnimation(.spring(response: 0.2, dampingFraction: 1)) {
-                                
-                                isButtonClicked6 = true
-                                
-                            }
-                            
-                            button6SecretCount += 1
-                            
-                        }
-                        .buttonStyle(.borderedProminent)
-                        .clipShape(RoundedRectangle(cornerRadius: 8))
-                        .overlay(
-                            
-                            RoundedRectangle(cornerRadius: 8)
-                                .stroke(Color.gray, lineWidth: 0.5)
-                            
-                        )
-                        
-                    }
-                    
-                    if button6SecretCount == 10 {
-                        
-                        Button("7") {
-                            
-                            withAnimation(.spring(response: 0.2, dampingFraction: 1)) {
-                                
-                                isButtonClicked7 = true
-                                
-                            }
-                            
-                        }
-                        .buttonStyle(.borderedProminent)
-                        .clipShape(RoundedRectangle(cornerRadius: 8))
-                        .overlay(
-                            
-                            RoundedRectangle(cornerRadius: 8)
-                                .stroke(Color.gray, lineWidth: 0.5)
-                            
-                        )
-                        
-                    }
-                    
                 }
-                .frame(minWidth: 300, minHeight: 40)
+                .frame(minWidth: 175, minHeight: 40)
                 .background(.background)
                 .cornerRadius(17)
                 .padding()

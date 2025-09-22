@@ -1,18 +1,19 @@
-"helloSwiftUI" = "Привет,";
+/* RELEASE */
+
+"helloSwiftUI" = "Привет";
 "appWritten" = "Это приложение написано на языке Swift в Xcode.";
 "appUsesSwiftUI" = "Это приложение использует интерфейс SwiftUI.";
-"byClickingOnLinks" = "Нажатием на ссылки выше, вы можете перейти на сайт компании.";
-"buildNumberSecret" = "Небольшой секрет: этот номер сборки – (32e87) это первые 5 символов контрольной суммы приложения SHA256.";
-"appFinalReleaseDateSecret" = "Снова секрет: финальный 1.0 Релиз Test App выйдет 24 сентября ближе к ночи.";
+"byClickingOnLinks" = "Нажатием на ссылки ниже, вы можете перейти на сайт компании.";
+"buildNumberSecret" = "Небольшой секрет: этот номер сборки – (bf9fc) это первые 5 символов контрольной суммы приложения SHA256.";
 "closePop-upWindowInstruction" = "Чтобы закрыть всплывающие окна, открывающиеся кнопками выше, нажмите на кнопку закрытия или на фон за ними.";
 "thereIsNothingUseful" = "Здесь ничего полезного.";
 "closeButton" = "Закрыть";
 "repoLink" = "Репозиторий приложения";
 "releasesLink" = "Релизы приложения";
 "releaseDateTitle" = "Дата выпуска: ";
-"releaseDate" = "21.09.2025 г.";
+"releaseDate" = "22.09.2025 г.";
 "versionTitle" = "Версия Test App: ";
-"version" = "1.0 Бета 5 (32e87)";
+"version" = "1.0 Релиз (bf9fc)";
 "appPages" = "Страницы приложения";
 "homeCase" = "Главная";
 "newCase" = "Что нового?";

@@ -1,9 +1,10 @@
+//RELEASE
+
 import SwiftUI
 
 struct SettingsView: View {
     
     @AppStorage("sidebarBackground") var sidebarBackground: String = "ultraThinMaterial"
-    @AppStorage("isSecretSetting1Enabled") var isSecretSetting1Enabled: Bool = false
     
     var body: some View {
         
@@ -58,27 +59,7 @@ struct SettingsView: View {
                 .pickerStyle(.menu)
                 
             }
-            .padding(.top, 1)
-            
-            Text("secretSettingsHeading")
-                .font(.custom("SF Pro", size: 24))
-                .bold()
-                .padding(.top)
-            
-            HStack {
-                
-                Toggle(isOn: $isSecretSetting1Enabled) {
-                    
-                    Text("secretSetting1")
-                        .font(.custom("SF Pro", size: 14))
-                        .bold()
-                    
-                }
-                .toggleStyle(.switch)
-                .controlSize(.small)
-                
-            }
-            .padding(.top, 1)
+            .padding(.top, 2)
             
             Spacer()
             

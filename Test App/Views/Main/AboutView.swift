@@ -1,3 +1,5 @@
+//RELEASE
+
 import SwiftUI
 
 struct AboutView: View {

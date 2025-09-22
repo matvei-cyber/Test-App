@@ -1,3 +1,5 @@
+//RELEASE
+
 import SwiftUI
 
 private struct ReleaseNote: Identifiable {
@@ -12,6 +14,14 @@ private struct ReleaseNote: Identifiable {
 struct ReleaseNotesView: View {
     
     private let rawNotesRu: [(version: String, items: [String])] = [
+        
+        ("1.0 Релиз (bf9fc)", [
+            
+            "Убраны все секретные кнопки и настройки, отсылающие к Релизу.",
+            "Каждый файл исходного кода полностью проверен и доведен до идеала.",
+            "Все (по крайней мере очень много) сценариев использования приложения проверены и отлажены."
+            
+        ]),
         
         ("1.0 Бета 5 (32e87)", [
             
@@ -136,6 +146,14 @@ struct ReleaseNotesView: View {
     
     private let rawNotesEn: [(version: String, items: [String])] = [
         
+        ("1.0 Release (bf9fc)", [
+            
+            "All secret buttons and settings referring to the Release have been removed.",
+            "Every source code file has been thoroughly checked and perfected.",
+            "All (or at least most) scenarios for using the application have been tested and debugged."
+            
+        ]),
+        
         ("1.0 Beta 5 (32e87)", [
             
             "Improved localization accuracy for English.",
@@ -259,6 +277,8 @@ struct ReleaseNotesView: View {
     
     private let releaseURLs: [String: String] = [
         
+        "1.0 Релиз (bf9fc)": "https://github.com/matvei-cyber/Test-App/releases/tag/1.0Release",
+        "1.0 Release (bf9fc)": "https://github.com/matvei-cyber/Test-App/releases/tag/1.0Release",
         "1.0 Бета 5 (32e87)": "https://github.com/matvei-cyber/Test-App/releases/tag/1.0Beta5",
         "1.0 Beta 5 (32e87)": "https://github.com/matvei-cyber/Test-App/releases/tag/1.0Beta5",
         "1.0 Бета 4 (d6291)": "https://github.com/matvei-cyber/Test-App/releases/tag/1.0Beta4",

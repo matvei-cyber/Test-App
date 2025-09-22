@@ -1,18 +1,19 @@
+/* RELEASE */
+
 "helloSwiftUI" = "Hello";
 "appWritten" = "This app is written in Swift in Xcode.";
 "appUsesSwiftUI" = "This app uses the SwiftUI interface.";
-"byClickingOnLinks" = "By clicking on the links above, you can go to the company's website.";
-"buildNumberSecret" = "A little secret: this build number – (32e87) is the first 5 characters of the SHA256 checksum of the app.";
-"appFinalReleaseDateSecret" = "Another secret: the final 1.0 release of Test App will be published on September 24, closer to nighttime.";
+"byClickingOnLinks" = "By clicking on the links below, you can go to the company's website.";
+"buildNumberSecret" = "A little secret: this build number – (bf9fc) is the first 5 characters of the SHA256 checksum of the app.";
 "closePop-upWindowInstruction" = "To close pop-up windows opened by the buttons above, click on the close button or on the background behind them.";
 "closeButton" = "Close";
 "thereIsNothingUseful" = "There's nothing useful here.";
 "repoLink" = "App repository";
 "releasesLink" = "App releases";
 "releaseDateTitle" = "Release date: ";
-"releaseDate" = "21.09.2025";
+"releaseDate" = "22.09.2025";
 "versionTitle" = "Test App version: ";
-"version" = "1.0 Beta 5 (32e87)";
+"version" = "1.0 Release (bf9fc)";
 "appPages" = "App pages";
 "homeCase" = "Home";
 "newCase" = "What's new?";
